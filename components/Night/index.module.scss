@@ -13,19 +13,27 @@
   align-items: center;
   cursor: pointer;
   transition: 0.2s;
+  // font-size: 2em;
 
-  font-size: 2em;
+  &.active {
+    background: #444;
 
-  svg {
-    width: 100%;
-    height: 100%;
-
-    &:nth-child(2) {
-      display: none;
+    .night__icon {
+      fill: #fff;
     }
   }
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+
+    &.active {
+      display: none;
+      fill: #fff;
+    }
   }
 }

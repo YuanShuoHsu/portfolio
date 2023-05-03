@@ -2,9 +2,14 @@ import React from "react";
 import Link from "next/link";
 import styles from "./index.module.scss";
 
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+
 export default function Header() {
+  const nightValue = useSelector((state: RootState) => state.night.value);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${nightValue ? styles.active : ""}`}>
       <Link href="/">
         <div className={styles.header__logo}>
           <span className={styles.header__logoText}>My</span>
