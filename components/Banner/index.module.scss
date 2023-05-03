@@ -1,7 +1,7 @@
 .banner {
   background: cadetblue;
   width: 100%;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,14 +34,33 @@
 
     .banner__button {
       padding: 15px 35px;
-      background: 2196f3;
+      background: #2196f3;
       border: none;
       border-radius: 4px;
+
+      font-size: 1.25em;
+      letter-spacing: 0.05em;
+      margin-right: 20px;
+      border-radius: 4px;
+      font-weight: 600;
+
       cursor: pointer;
       transition: 0.2s;
 
       &:hover {
         opacity: 0.8;
+      }
+
+      &.chat {
+        background: transparent;
+        color: #333;
+        display: flex;
+
+        svg {
+          position: relative;
+          color: #e91e63;
+          font-size: 1.5em;
+        }
       }
     }
   }
