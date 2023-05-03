@@ -16,7 +16,7 @@ export default function Banner() {
       </p>
       <div className={styles.banner__buttonGroup}>
         <button className={styles.banner__button}>Hire Me</button>
-        <button className={styles.banner__button}>Let's Chat</button>
+        <button className={styles.banner__button}>{`Let's Chat`}</button>
       </div>
     </div>
   );
