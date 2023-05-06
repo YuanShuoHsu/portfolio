@@ -1,15 +1,47 @@
 import React from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { hideSidebarMenu } from "@/store/slice/sidebarMenu";
+import { RootState } from "@/store";
+
 import styles from "./index.module.scss";
 
+const menuItems = ["Home", "About", "Work", "Contact"];
+
 export default function SidebarMenu() {
+  const dispatch = useDispatch();
+
+  const sidebarMenuValue = useSelector(
+    (state: RootState) => state.sidebarMenu.value
+  );
+
+  const handleSidebarHide = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      dispatch(hideSidebarMenu());
+    }
+  };
+
+  const handleItemClick = () => {
+    dispatch(hideSidebarMenu());
+  };
+
   return (
-    <div className={styles.sidebarMenu}>
+    <div
+      onClick={handleSidebarHide}
+      className={`${styles.sidebarMenu} ${
+        sidebarMenuValue ? styles["sidebarMenu--active"] : ""
+      }`}
+    >
       <ul className={styles.sidebarMenu__list}>
-        <li className={styles.sidebarMenu__listItem}>Home</li>
-        <li className={styles.sidebarMenu__listItem}>About</li>
-        <li className={styles.sidebarMenu__listItem}>Work</li>
-        <li className={styles.sidebarMenu__listItem}>Contact</li>
+        {menuItems.map((item) => (
+          <li
+            onClick={handleItemClick}
+            key={item}
+            className={styles.sidebarMenu__listItem}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
     </div>
   );

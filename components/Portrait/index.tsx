@@ -12,6 +12,7 @@ export default function Portrait() {
         alt="許元碩"
         width={1080}
         height={1440}
+        priority
       />
     </div>
   );
