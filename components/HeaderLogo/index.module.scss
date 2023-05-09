@@ -1,9 +1,11 @@
 .headerLogo {
   font-size: 24px;
   font-weight: 800;
-  line-height: 60px;
-
+  line-height: 60px; 
+  
   &__text {
+    // text-decoration: none;
+    
     &:nth-child(1) {
       color: #2196f3;
     }

@@ -1,5 +1,5 @@
 $breakpoints: (
-  lg: 992px,
+  mg: 768px,
 );
 
 @mixin respond-to($breakpoint) {
@@ -23,7 +23,7 @@ $breakpoints: (
     display: none;
     transition: opacity 0.2s;
 
-    @include respond-to(lg) {
+    @include respond-to(mg) {
       display: block;
     }
 
@@ -42,7 +42,7 @@ $breakpoints: (
     display: flex;
     gap: 10px;
 
-    @include respond-to(lg) {
+    @include respond-to(mg) {
       display: none;
     }
 

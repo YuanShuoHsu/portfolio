@@ -10,11 +10,15 @@ export const sidebarMenuSlice = createSlice({
   reducers: {
     showSidebarMenu: (state) => {
       state.value = true;
-      document.body.style.overflow = "auto";
+      // setTimeout(() => {
+        document.body.style.overflow = "hidden";
+      // }, 0);
     },
     hideSidebarMenu: (state) => {
       state.value = false;
-      document.body.style.overflow = "hidden";
+      // setTimeout(() => {
+        document.body.style.overflow = "auto";
+      // }, 0);
     },
   },
 });
