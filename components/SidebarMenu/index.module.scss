@@ -1,0 +1,44 @@
+.sidebarMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s;
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__list {
+    padding: 10px;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    overflow: hidden auto;
+
+    &Item {
+      background: #f0f0f0;
+      border-radius: 4px;
+      color: #000;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

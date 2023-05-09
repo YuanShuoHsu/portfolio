@@ -1,0 +1,34 @@
+.night {
+  width: 30px;
+  height: 30px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--active {
+    background: #444;
+
+    .night__icon {
+      fill: #fff;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    
+    &--active {
+      display: none;
+    }
+  }
+}
