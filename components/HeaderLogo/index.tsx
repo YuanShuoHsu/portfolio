@@ -9,10 +9,8 @@ interface headerLogoProps {
 }
 
 export default function HeaderLogo({ nightValue }: headerLogoProps) {
-  console.log(nightValue);
   return (
-    <Link href="/">
-      <div className={styles.headerLogo}>
+    <Link href="/" className={styles.headerLogo}>
         <span className={styles.headerLogo__text}>My</span>
         <span
           className={`${styles.headerLogo__text} ${
@@ -21,7 +19,6 @@ export default function HeaderLogo({ nightValue }: headerLogoProps) {
         >
           Portfolio_
         </span>
-      </div>
     </Link>
   );
 }
