@@ -1,5 +1,6 @@
 import React from "react";
 
+import Typed from "../Typed";
 import Introduction from "../Introduction";
 import Theme from "../Theme";
 import Portrait from "../Portrait";
@@ -19,12 +20,12 @@ export default function Banner() {
       }`}
     >
       <div className={styles.banner__container}>
-        <div className={styles.banner__box}>物件</div>
-        <Introduction />
-        <Theme />
+        <Portrait />
       </div>
       <div className={styles.banner__container}>
-        <Portrait />
+        <Typed />
+        <Introduction />
+        <Theme />
       </div>
     </main>
   );

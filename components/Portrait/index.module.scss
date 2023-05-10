@@ -12,6 +12,7 @@ $breakpoints: (
   position: relative;
   width: 400px;
   height: 400px;
+  background-color: coral;
   border: 1px solid #fff;
   border-radius: 50%;
   display: flex;
@@ -42,6 +43,8 @@ $breakpoints: (
 
   &__list {
     position: absolute;
+    margin: 0;
+    padding: 0;
     width: 430px;
     height: 430px;
     border-radius: 50%;
@@ -50,10 +53,11 @@ $breakpoints: (
     align-items: center;
     list-style: none;
     animation: spin 20s linear infinite;
-   
+
     &Item {
       position: absolute;
       padding: 4px;
+      box-sizing: border-box;
       left: 0;
       width: 30px;
       height: 30px;
@@ -64,7 +68,7 @@ $breakpoints: (
       transition: box-shadow 0.2s;
 
       &:hover {
-        box-shadow: 0 0 0 2px var(--clr), 0 0 0 4px #fff;
+        box-shadow: 0 0 0 2px var(--clr), 0 0 0 6px #fff;
       }
 
       svg {

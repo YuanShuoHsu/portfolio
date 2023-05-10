@@ -10,38 +10,66 @@ $breakpoints: (
 
 .banner {
   padding: 20px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 60px);
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
   gap: 20px;
-  transition: background-color 0.2s;
 
   @include respond-to(md) {
-    flex-direction: column-reverse;
-  }
-
-  &--active {
-    background-color: #333;
-
-    .banner__container {
-    }
+    flex-direction: column;
   }
 
   &__container {
     width: 50%;
-    min-height: calc(100vh - 60px - 40px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     gap: 20px;
 
-    @include respond-to(md) {
-      width: 100%;
-      min-height: auto;
+    &:nth-child(1) {
+      justify-content: center;
     }
 
     &:nth-child(2) {
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include respond-to(md){
+      width: 100%;
     }
   }
+  // align-items: center;
+  // display: flex;
+  // align-items: center;
+  // gap: 20px;
+  // transition: background-color 0.2s;
+
+  // @include respond-to(md) {
+  //   flex-direction: column-reverse;
+  // }
+
+  // &--active {
+  //   background-color: #333;
+  // }
+
+  // &__container {
+  //   width: 50%;
+  //   min-height: calc(100vh - 60px - 40px);
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   gap: 20px;
+
+  //   @include respond-to(md) {
+  //     width: 100%;
+  //     min-height: auto;
+  //   }
+
+  //   &:nth-child(2) {
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+  // }
 }
