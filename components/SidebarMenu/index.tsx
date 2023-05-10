@@ -39,7 +39,7 @@ export default function SidebarMenu() {
             key={item}
             className={styles.sidebarMenu__listItem}
           >
-            {item}
+            <button className={styles.sidebarMenu__listItemButton}>{item}</button>
           </li>
         ))}
       </ul>

@@ -5,16 +5,16 @@ import Link from "next/link";
 import styles from "./index.module.scss";
 
 interface headerLogoProps {
-  nightValue: boolean;
+  themeNightValue: boolean;
 }
 
-export default function HeaderLogo({ nightValue }: headerLogoProps) {
+export default function HeaderLogo({ themeNightValue }: headerLogoProps) {
   return (
     <Link href="/" className={styles.headerLogo}>
         <span className={styles.headerLogo__text}>My</span>
         <span
           className={`${styles.headerLogo__text} ${
-            nightValue ? styles["headerLogo__text--active"] : ""
+            themeNightValue ? styles["headerLogo__text--active"] : ""
           }`}
         >
           Portfolio_

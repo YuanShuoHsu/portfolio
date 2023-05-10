@@ -1,16 +1,28 @@
 import React from "react";
 
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { showSidebarMenu } from "@/store/slice/sidebarMenu";
-// import { RootState } from "@/store";
+import { RootState } from "@/store";
 
 import styles from "./index.module.scss";
 
+const navItems = [
+  { id: "targetDiv1", label: "Home" },
+  { id: "targetDiv2", label: "About" },
+  { id: "targetDiv3", label: "Work" },
+  { id: "targetDiv4", label: "Contact" },
+];
+
 export default function HeaderNav() {
   const dispatch = useDispatch();
-  // const sidebarMenuValue = useSelector(
-  //   (state: RootState) => state.sidebarMenu.value
-  // );
+  const targetDivRefs = useSelector((state: RootState) => state.targetDivs);
+
+  const handleNavClick = (id: string) => {
+    const targetDivRef = targetDivRefs[id];
+    if (targetDivRef?.current) {
+      targetDivRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const handleClick = () => {
     dispatch(showSidebarMenu());
@@ -24,18 +36,15 @@ export default function HeaderNav() {
         </svg>
       </button>
       <ul className={styles.headerNav__menu}>
-        <li className={styles.headerNav__menuItem}>
-          <span className={styles.headerNav__menuItemText}>Home</span>
-        </li>
-        <li className={styles.headerNav__menuItem}>
-          <span className={styles.headerNav__menuItemText}>About</span>
-        </li>
-        <li className={styles.headerNav__menuItem}>
-          <span className={styles.headerNav__menuItemText}>Work</span>
-        </li>
-        <li className={styles.headerNav__menuItem}>
-          <span className={styles.headerNav__menuItemText}>Contact</span>
-        </li>
+        {navItems.map((item) => (
+          <li
+            key={item.id}
+            onClick={() => handleNavClick(item.id)}
+            className={styles.headerNav__menuItem}
+          >
+            <span className={styles.headerNav__menuItemText}>{item.label}</span>
+          </li>
+        ))}
       </ul>
     </nav>
   );

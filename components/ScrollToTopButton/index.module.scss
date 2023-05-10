@@ -1,0 +1,41 @@
+.scrollToTopButton {
+  position: fixed;
+  right: 40px;
+  bottom: 140px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  z-index: 2;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text {
+  }
+}
