@@ -1,13 +1,13 @@
 import React from "react";
 
-import Social from "../Social";
-import Night from "../Night";
+import ThemeSocial from "../ThemeSocial";
+import Night from "../ThemeNight";
 
 import styles from "./index.module.scss";
 
 export default function Theme() {
   return <div className={styles.theme}>
-    <Social />
+    <ThemeSocial />
     <Night/>
   </div>;
 }

@@ -1,4 +1,4 @@
-.social {
+.themeSocial {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -6,7 +6,7 @@
   gap: 20px;
 
   &__item {
-    .social__button {
+    .themeSocial__button {
       width: 30px;
       height: 30px;
       background: #333;

@@ -1,29 +1,40 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
-import Typed from "../Typed";
+import TypedIdentity from "../TypedIdentity";
 import Introduction from "../Introduction";
 import Theme from "../Theme";
 import Portrait from "../Portrait";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
+import { setTargetDivRef } from "@/store/slice/targetDivs";
 
 import styles from "./index.module.scss";
 
 export default function Banner() {
-  const nightValue = useSelector((state: RootState) => state.night.value);
+  const dispatch = useDispatch();
+  const targetDivRef1 = useRef(null);
+
+  useEffect(() => {
+    dispatch(setTargetDivRef({ id: "targetDiv1", ref: targetDivRef1 }));
+  }, [dispatch]);
+
+  const themeNightValue = useSelector(
+    (state: RootState) => state.themeNight.value
+  );
 
   return (
     <main
+      ref={targetDivRef1}
       className={`${styles.banner} ${
-        nightValue ? styles["banner--active"] : ""
+        themeNightValue ? styles["banner--active"] : ""
       }`}
     >
       <div className={styles.banner__container}>
         <Portrait />
       </div>
       <div className={styles.banner__container}>
-        <Typed />
+        <TypedIdentity />
         <Introduction />
         <Theme />
       </div>

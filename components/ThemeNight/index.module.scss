@@ -1,4 +1,4 @@
-.night {
+.themeNight {
   width: 30px;
   height: 30px;
   background: #f0f0f0;
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: opacity 0.2s, background 0.2s;
+  transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.8;
@@ -18,7 +18,7 @@
   &--active {
     background: #444;
 
-    .night__icon {
+    .themeNight__icon {
       fill: #fff;
     }
   }

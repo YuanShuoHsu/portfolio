@@ -9,11 +9,11 @@ import { RootState } from "@/store";
 import styles from "./index.module.scss";
 
 export default function Header() {
-  const nightValue = useSelector((state: RootState) => state.night.value);
+  const themeNightValue = useSelector((state: RootState) => state.themeNight.value);
 
   return (
-    <header className={`${styles.header} ${nightValue ? styles["header--active"] : ""}`}>
-      <HeaderLogo nightValue={nightValue} />
+    <header className={`${styles.header} ${themeNightValue ? styles["header--active"] : ""}`}>
+      <HeaderLogo themeNightValue={themeNightValue} />
       <HeaderNav />
     </header>
   );
